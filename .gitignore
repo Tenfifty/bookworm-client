@@ -1,0 +1,6 @@
+build/
+dist/
+bookworm.egg-info/
+*.pyc
+*.swp
+*.egg
