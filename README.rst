@@ -10,6 +10,7 @@ Example usage
 -------------
 
 .. code-block:: python
+
     import tabulate
     from bookworm import Bookworm
 
@@ -29,7 +30,8 @@ Example usage
 
 
 
-:: 
+::
+
     Entity     Type    Variants
     ---------  ------  ----------
     Sverige    geo     Sverige
