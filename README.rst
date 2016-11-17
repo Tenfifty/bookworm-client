@@ -1,47 +1,60 @@
-# Bookworm
+Bookworm
+========
 
 This is a Python client for the Bookworm natural language API, made available by Crawlica.
 
 You can register to receive an API key at https://bookworm.crawlica.com/request_api_key/
 
 
-## Example usage
+Example usage
+-------------
 
-```python
-import tabulate
-from bookworm import Bookworm
+.. code-block:: python
 
-
-API_KEY = '...'
-
-documents = ['De två största städerna i Sverige är Stockholm och Göteborg',
-             'Donald Trump blir Barack Obamas efterträdare']
-
-b = Bookworm(API_KEY, 'sv')
-res = b.entities(documents)
-
-for ents in res:
-    data = [[ent['entity'], ent['type'], ', '.join(ent['variants'])] for ent in ents]
-    print(tabulate.tabulate(data, headers=['Entity', 'Type', 'Variants']))
-    print('')
-```
+    import tabulate
+    from bookworm import Bookworm
 
 
-```
-Entity     Type    Variants
----------  ------  ----------
-Sverige    geo     Sverige
-Stockholm  geo     Stockholm
-Göteborg   geo     Göteborg
+    API_KEY = '...'
 
-Entity        Type    Variants
-------------  ------  -------------
-Donald Trump  person  Donald Trump
-Barack Obama  person  Barack Obamas
-```
+    documents = ['De två största städerna i Sverige är Stockholm och Göteborg',
+                 'Donald Trump blir Barack Obamas efterträdare']
+
+    b = Bookworm(API_KEY, 'sv')
+    res = b.entities(documents)
+
+    for ents in res:
+        data = [[ent['entity'], ent['type'], ', '.join(ent['variants'])] for ent in ents]
+        print(tabulate.tabulate(data, headers=['Entity', 'Type', 'Variants']))
+        print('')
 
 
-## Functionality currently available
+
+::
+
+    Entity     Type    Variants
+    ---------  ------  ----------
+    Sverige    geo     Sverige
+    Stockholm  geo     Stockholm
+    Göteborg   geo     Göteborg
+
+    Entity        Type    Variants
+    ------------  ------  -------------
+    Donald Trump  person  Donald Trump
+    Barack Obama  person  Barack Obamas
+
+
+Installation
+------------
+
+.. code-block:: bash
+
+  $ pip install bookworm
+
+
+
+Functionality currently available
+---------------------------------
 
 * *autotag* - Automatically tag documents with the best matching tags from our large database of tags.
 * *wordsmash* - Compare document sets to get the essence of what makes a subset special. Get the defining words and phrases.
