@@ -15,7 +15,7 @@ version = __version__
 author = __author__
 license = __license__
 
-with open('README.md', 'r', 'utf-8') as f:
+with open('README.rst', 'r', 'utf-8') as f:
     readme = f.read()
 
 description = 'Text analysis api'
