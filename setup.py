@@ -20,7 +20,7 @@ with open('README.md', 'r', 'utf-8') as f:
 
 description = 'Text analysis api'
 long_description = readme
-download_url = 'https://github.com/crawlica/bookworm/tarball/{}'.format(version)
+download_url = 'https://github.com/crawlica/bookworm-client/tarball/{}'.format(version)
 
 package_dir = {'bookworm': 'bookworm'}
 
@@ -32,7 +32,7 @@ setup(name='bookworm',
       long_description=long_description,
       author=author,
       author_email='tech@crawlica.com',
-      url='https://github.com/crawlica/bookworm',
+      url='https://github.com/crawlica/bookworm-client',
       download_url=download_url,
       license=license,
       platforms=['POSIX'],
