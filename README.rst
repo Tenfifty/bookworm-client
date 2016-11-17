@@ -44,6 +44,14 @@ Example usage
     Barack Obama  person  Barack Obamas
 
 
+Installation
+------------
+
+.. code-block:: bash
+
+  pip install bookworm
+
+
 
 Functionality currently available
 ---------------------------------
