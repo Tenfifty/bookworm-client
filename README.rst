@@ -49,7 +49,7 @@ Installation
 
 .. code-block:: bash
 
-  pip install bookworm
+  $ pip install bookworm
 
 
 
