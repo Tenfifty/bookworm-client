@@ -24,7 +24,7 @@ download_url = 'https://github.com/crawlica/bookworm-client/tarball/{}'.format(v
 
 package_dir = {'bookworm': 'bookworm'}
 
-requires = ['requests', 'more_itertools']
+requires = ['requests']
 
 setup(name='bookworm',
       version=version,
