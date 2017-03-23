@@ -2,17 +2,15 @@ import json
 import requests
 
 VERSION = 'v1'
-BACKENDS = {'sv': 'https://bookworm.crawlica.com',
-            'da': 'https://dabookworm.crawlica.com'}
+BACKEND = 'https://text.crawlica.com'
 ENDPOINT_TPL = '{backend}/{version}/{lang}/{endpoint}/?api_key={api_key}'
 
 
 class Bookworm(object):
     """The Bookworm API"""
+
     def __init__(self, api_key, lang='en'):
         super(Bookworm, self).__init__()
-        if lang not in BACKENDS:
-            raise ValueError('Unsupported language {}'.format(lang))
         self.api_key = api_key
         self.lang = lang
 
@@ -96,13 +94,11 @@ class Bookworm(object):
             'background_color': background_color
         }
         res = self._make_request('wordcloud', data)
-        backend = BACKENDS[self.lang]
-        absolute_url = '{}{}'.format(backend, res['url'])
+        absolute_url = '{}{}'.format(BACKEND, res['url'])
         return {'url': absolute_url}
 
     def _make_request(self, endpoint, data=None):
-        backend = BACKENDS[self.lang]
-        url = ENDPOINT_TPL.format(backend=backend,
+        url = ENDPOINT_TPL.format(backend=BACKEND,
                                   endpoint=endpoint,
                                   api_key=self.api_key,
                                   version=VERSION,
